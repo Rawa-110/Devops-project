@@ -6,6 +6,7 @@ Related Project: Service Discovery Roadmap
 Project Structure
 Project Structure
 
+
 api-gateway/
   gateway.js
 consul/
@@ -14,14 +15,18 @@ services/
   service-a.js
   service-b.js
   service-c.js
+
+
 Prerequisites
 Node.js
 Docker
+
 Getting Started
 1. Start Consul
 Navigate to the consul directory and run:
 
 docker-compose up -d
+
 Consul UI will be available at http://localhost:8500.
 
 2. Start Services
@@ -30,14 +35,18 @@ In separate terminals, start each service from the services directory:
 node service-a.js
 node service-b.js
 node service-c.js
+
 3. Start API Gateway
 In the api-gateway directory:
-
 node gateway.js
-4. Check Application Working
+
+4 Check Application Working
 Visit http://localhost:4000/service-a/info
 Visit http://localhost:4000/service-b/info
 Visit http://localhost:4000/service-c/info
 You should receive a JSON response with the service name and timestamp.
 
 
+
+
+  

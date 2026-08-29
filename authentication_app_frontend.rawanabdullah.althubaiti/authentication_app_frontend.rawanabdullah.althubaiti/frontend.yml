@@ -1,0 +1,25 @@
+trigger:
+  paths:
+    include:
+      - frontend/
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  dockerRegistryServiceConnection: 'اسم-Service-Connection'
+  imageRepository: 'frontend'
+  containerRegistry: 'اسم-ACR.azurecr.io'
+  dockerfilePath: 'frontend/Dockerfile'
+  tag: '$(Build.BuildId)'
+
+steps:
+- task: Docker@2
+  inputs:
+    containerRegistry: $(dockerRegistryServiceConnection)
+    repository: $(imageRepository)
+    command: buildAndPush
+    Dockerfile: $(dockerfilePath)
+    tags: |
+      $(tag)
+      latest

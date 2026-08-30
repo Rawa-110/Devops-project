@@ -23,7 +23,7 @@ This project demonstrates a multi-service application using Docker, including va
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/PeymanSohi/multi-service-application
+git clone https://github.com/Rawa-110/multi-service-application
 cd multi-service-application
 ```
 

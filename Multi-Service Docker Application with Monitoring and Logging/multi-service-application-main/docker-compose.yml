@@ -1,0 +1,96 @@
+version: '3.8'
+
+services:
+  # Web frontend service
+  web:
+    build:
+      context: ./web
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    depends_on:
+      - api
+
+  # API service
+  api:
+    build:
+      context: ./api
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - REDIS_URI=${REDIS_URI}
+    networks:
+      - app-network
+    depends_on:
+      - mongo
+      - redis
+
+  # MongoDB service
+  mongo:
+    image: mongo:latest
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - app-network
+
+  # Redis service
+  redis:
+    image: redis:latest
+    networks:
+      - app-network
+
+  # Nginx reverse proxy
+  nginx:
+    image: nginx:latest
+    build:
+      context: ./nginx
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+  # Prometheus for monitoring
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - app-network
+
+  # Grafana for visualizing Prometheus data
+  grafana:
+    image: grafana/grafana
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+    depends_on:
+      - prometheus
+
+  # Loki for logs
+  loki:
+    image: grafana/loki:latest
+    networks:
+      - app-network
+
+  # Promtail for log collection
+  promtail:
+    image: grafana/promtail:latest
+    volumes:
+      - /var/log:/var/log
+      - ./promtail/promtail-config.yaml:/etc/promtail/config.yml
+    networks:
+      - app-network
+
+volumes:
+  mongo-data:
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,11 @@
+version: '3.7'
+
+services:
+  consul:
+    image: consul:1.15
+    container_name: consul
+    ports:
+      - "8500:8500"   # Web UI
+      - "8600:8600/udp" # DNS
+      - "8600:8600/tcp"
+    command: "consul agent -server -bootstrap -ui -client=0.0.0.0"

@@ -9,7 +9,7 @@ Follow the steps below to set up and run the monitoring system on your machine.
 ### 1. **Clone the Repository**
 First, clone the repository to your local machine:
 ```bash
-git clone https://github.com/PeymanSohi/grafatheus
+git clone https://github.com/Rawa-110/grafatheus
 cd grafatheus
 ```
 

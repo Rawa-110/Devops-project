@@ -1,0 +1,18 @@
+{
+    "dashboard": {
+      "title": "Application Metrics",
+      "panels": [
+        {
+          "title": "Custom Metric Example",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "your_custom_metric",
+              "legendFormat": "app metric"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

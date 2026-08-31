@@ -1,0 +1,18 @@
+{
+    "dashboard": {
+      "title": "System Metrics",
+      "panels": [
+        {
+          "title": "CPU Usage",
+          "type": "graph",
+          "targets": [
+            {
+              "expr": "100 - (avg by (instance)(rate(node_cpu_seconds_total{mode=\"idle\"}[1m])) * 100)",
+              "legendFormat": "{{instance}}"
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

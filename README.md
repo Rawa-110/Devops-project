@@ -1,57 +1,40 @@
-# Devops-project
+# DevOps Projects
 
-# DevOps Projects — Radam
+This repository contains all my DevOps projects, tools, and technologies that I use throughout my DevOps learning journey.
 
-مرحبًا 👋 أنا Radam، وهذه الصفحة تجمع مشاريع DevOps التي أعمل عليها والأدوات والتقنيات التي أستخدمها.
-
-## 🛠️ DevOps Tools
+## 🛠️ Tools & Technologies
 
 - Git & GitHub
 - Linux
 - Docker
+- Docker Compose
 - Kubernetes
 - Jenkins
 - GitHub Actions
 - Terraform
 - Ansible
 - AWS
-- Nginx
 - Bash
+- Nginx
 - Prometheus
 - Grafana
 
 ## 📂 Projects
 
 ### 1. CI/CD Pipeline
-Automated build, test, and deployment pipeline.
+Automated build, testing, and deployment.
 
-**Tools:** GitHub Actions, Docker, Linux
+### 2. Docker Projects
+Containerizing and managing applications using Docker.
 
-### 2. Docker Project
-Containerizing applications and managing Docker images.
-
-**Tools:** Docker, Docker Compose
-
-### 3. Kubernetes Project
+### 3. Kubernetes Projects
 Deploying and managing containerized applications.
 
-**Tools:** Kubernetes, Docker
-
 ### 4. Infrastructure as Code
-Managing cloud infrastructure using code.
+Managing infrastructure using Terraform.
 
-**Tools:** Terraform, AWS
+### 5. Automation
+Automating server configuration and deployments using Ansible.
 
-### 5. Configuration Management
-Automating server configuration and application deployment.
-
-**Tools:** Ansible, Linux
-
-### 6. Monitoring & Observability
-Monitoring applications and infrastructure.
-
-**Tools:** Prometheus, Grafana
-
-## 👨‍💻 Author
-
-**Radam**
+### 6. Monitoring
+Monitoring infrastructure and applications using Prometheus and Grafana.
